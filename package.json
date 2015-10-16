@@ -1,0 +1,34 @@
+{
+  "name": "ipfs-import",
+  "dependencies": {
+    "ipfs-api": "^2.4.0",
+    "lodash": "^3.10.1",
+    "minimist": "^1.2.0",
+    "npmi": "^1.0.1",
+    "reqwest": "^2.0.5",
+    "browserify": "^11.2.0",
+    "tmp": "0.0.28"
+  },
+  "main": "./lib/index.js",
+  "devDependencies": {
+    "browserify-shim": "^3.8.10",
+    "express": "^4.13.3",
+    "request": "^2.65.0",
+    "serve-static": "^1.10.0"
+  },
+  "scripts": {
+    "build": "browserify . -s IpfsImport -o dist/ipfsimport.js"
+  },
+  "bin": "./bin/cli.js",
+  "browser": {
+    "System": "./vendor/system.src.js"
+  },
+  "browserify-shim": {
+    "System": "System"
+  },
+  "browserify": {
+    "transform": [
+      "browserify-shim"
+    ]
+  }
+}
